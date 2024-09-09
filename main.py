@@ -19,7 +19,7 @@ def print_book_report_from_path(path):
 
 
 def sort_alpha_char_counts(counts: dict) -> list:
-    counts_list = [{"char": key, "count": value} for key, value in counts.items() if key.isalpha()]
+    counts_list = [{"char": char, "count": count} for char, count in counts.items() if char.isalpha()]
     counts_list.sort(reverse=True, key=lambda char_counts: char_counts["count"])
     return counts_list
 
