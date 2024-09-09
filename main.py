@@ -4,18 +4,24 @@ def main():
 
 
 def print_book_report_from_path(path):
-    print(f"--- Begin report of {path} ---")
-    
     text = get_book_text(path)
+
+    print(f"--- Begin report of {path} ---")
+    print_num_words_found(text)
+    print_num_alpha_chars(text)
+    print("--- End report ---")
+
+
+def print_num_words_found(text):
     num_words = get_word_count(text)
     print(f"{num_words} words found in the document\n")
 
+
+def print_num_alpha_chars(text):
     char_counts = get_char_counts(text)
     alpha_char_counts_sorted = sort_alpha_char_counts(char_counts)
     for char_counts in alpha_char_counts_sorted:
         print(f"The \'{char_counts['char']}\' character was found {char_counts['count']} times")
-
-    print("--- End report ---")
 
 
 def sort_alpha_char_counts(counts: dict) -> list:
